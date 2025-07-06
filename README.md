@@ -36,7 +36,7 @@ A modern, cross-platform Todo app built with Flutter, featuring persistent Googl
 
 ## Video Demo
 See the full workflow and features in action:
-[Google Drive Demo Folder](https://drive.google.com/drive/folders/1hPkNO2O6HnMPuX_UOJ-Yy3WHZ6Nl1tB5)
+[Google Drive Demo Folder](https://drive.google.com/drive/folders/1hPkNO2O6HnMPuX_UOJ-Yy3WHZ6Nl1tB5?usp=sharing)
 
 ## Tech Stack
 - **Flutter** (cross-platform mobile/web/desktop)
