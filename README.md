@@ -56,58 +56,8 @@ See the full workflow and features in action:
 
 
 ## Architecture Diagram
-+-------------------+
-|   User Launches   |
-|     the App       |
-+---------+---------+
-          |
-          v
-+-------------------+
-|  Auth Service     |<-------------------+
-| (Firebase Auth,   |                    |
-|  Google Sign-In)  |                    |
-+---------+---------+                    |
-          |                              |
-   [Is user logged in?]                  |
-    /             \                      |
-   /               \                     |
-No/                 \Yes                 |
- /                   \                   |
-v                     v                  |
-+-------------------+   +----------------+------------------+
-|  Login Screen     |   |   Main Task List Screen           |
-| (Google Sign-In)  |   | (with Filter Chips: All/Active/   |
-+-------------------+   |  Completed)                       |
-          |             +----------------+------------------+
-          |                              |
-          v                              v
-+-------------------+         +-----------------------------+
-| On Success:       |         | Task Provider (State Mgmt)  |
-| Route to Main     |         |  - Loads tasks from Hive    |
-| Task List Screen  |         |  - Provides tasks to UI     |
-+-------------------+         +-----------------------------+
-                                         |
-                                         v
-                          +-------------------------------+
-                          | Task List UI                  |
-                          | - Shows tasks (filtered)      |
-                          | - Add, Complete, Delete       |
-                          +-------------------------------+
-                                         |
-                                         v
-                          +-------------------------------+
-                          | Task Service                  |
-                          | - Add/Update/Delete in Hive   |
-                          +-------------------------------+
-                                         |
-                                         v
-                          +-------------------------------+
-                          | Hive (Local Storage)          |
-                          +-------------------------------+
+![Architecture Diagram](https://github.com/user-attachments/assets/041af4d5-dc76-43d1-b671-48b8218767cb)
 
-Other Flows:
-- Edit Profile: Main Task List Screen → Edit Profile Screen → Auth Service (update display name)
-- Logout: Main Task List Screen → Logout Dialog → Auth Service (sign out) → Login Screen
 
 
 
