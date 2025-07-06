@@ -57,3 +57,13 @@ See the full workflow and features in action:
 ---
 
 **Enjoy your productivity!**
+
+## Screenshots
+![image](https://github.com/user-attachments/assets/148787cf-f84c-4c9c-959d-72ea92cb29f1)
+![WhatsApp Image 2025-07-06 at 22 18 24_86dea88e](https://github.com/user-attachments/assets/e66a5d30-f350-47c7-aaf9-3b5308d1c846)
+![WhatsApp Image 2025-07-06 at 22 18 23_824fcb0a](https://github.com/user-attachments/assets/fdbecbc8-4ad0-4858-adf0-cf76d97a57d5)
+![WhatsApp Image 2025-07-06 at 22 18 23_f9d64b5f](https://github.com/user-attachments/assets/b5400b43-32c1-45e8-851b-9113d1e290f4)
+
+
+
+
