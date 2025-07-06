@@ -54,7 +54,62 @@ See the full workflow and features in action:
 - Tasks are stored locally. If you want cloud sync, migrate to Firestore.
 - The app is ready for production and device testing.
 
----
+
+## Architecture Diagram
++-------------------+
+|   User Launches   |
+|     the App       |
++---------+---------+
+          |
+          v
++-------------------+
+|  Auth Service     |<-------------------+
+| (Firebase Auth,   |                    |
+|  Google Sign-In)  |                    |
++---------+---------+                    |
+          |                              |
+   [Is user logged in?]                  |
+    /             \                      |
+   /               \                     |
+No/                 \Yes                 |
+ /                   \                   |
+v                     v                  |
++-------------------+   +----------------+------------------+
+|  Login Screen     |   |   Main Task List Screen           |
+| (Google Sign-In)  |   | (with Filter Chips: All/Active/   |
++-------------------+   |  Completed)                       |
+          |             +----------------+------------------+
+          |                              |
+          v                              v
++-------------------+         +-----------------------------+
+| On Success:       |         | Task Provider (State Mgmt)  |
+| Route to Main     |         |  - Loads tasks from Hive    |
+| Task List Screen  |         |  - Provides tasks to UI     |
++-------------------+         +-----------------------------+
+                                         |
+                                         v
+                          +-------------------------------+
+                          | Task List UI                  |
+                          | - Shows tasks (filtered)      |
+                          | - Add, Complete, Delete       |
+                          +-------------------------------+
+                                         |
+                                         v
+                          +-------------------------------+
+                          | Task Service                  |
+                          | - Add/Update/Delete in Hive   |
+                          +-------------------------------+
+                                         |
+                                         v
+                          +-------------------------------+
+                          | Hive (Local Storage)          |
+                          +-------------------------------+
+
+Other Flows:
+- Edit Profile: Main Task List Screen → Edit Profile Screen → Auth Service (update display name)
+- Logout: Main Task List Screen → Logout Dialog → Auth Service (sign out) → Login Screen
+
+
 
 **Enjoy your productivity!**
 
@@ -63,6 +118,8 @@ See the full workflow and features in action:
 ![WhatsApp Image 2025-07-06 at 22 18 24_86dea88e](https://github.com/user-attachments/assets/e66a5d30-f350-47c7-aaf9-3b5308d1c846)
 ![WhatsApp Image 2025-07-06 at 22 18 23_824fcb0a](https://github.com/user-attachments/assets/fdbecbc8-4ad0-4858-adf0-cf76d97a57d5)
 ![WhatsApp Image 2025-07-06 at 22 18 23_f9d64b5f](https://github.com/user-attachments/assets/b5400b43-32c1-45e8-851b-9113d1e290f4)
+
+**This Project is a part of hackathon run by https://www.katomaran.com**
 
 
 
